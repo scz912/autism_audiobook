@@ -387,7 +387,7 @@ class _StoryListPageState extends State<StoryListPage> {
                       crossAxisCount: 2,
                       mainAxisSpacing: 16,
                       crossAxisSpacing: 16,
-                      childAspectRatio: 0.66,
+                      childAspectRatio: 0.78,
                     ),
                     itemBuilder: (context, index) {
                       final story = _filteredStories[index];
