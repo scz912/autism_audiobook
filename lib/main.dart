@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Pages
-//import 'welcome_page.dart';
-//import 'signup_page.dart';
-//import 'home_page.dart';
-//import 'profile_page.dart';
-import 'audio_player_page.dart';
-import 'content_management.dart';
-import 'upload_content_page.dart';
-//import 'settings_page.dart';
-import 'story_list_page.dart';
+import 'pages/audio_player_page.dart';
+import 'pages/content_management.dart';
+import 'pages/upload_content_page.dart';
+import 'pages/story_list_page.dart';
 
 // Optional navigation service
 class AppNavigationService {
@@ -60,28 +55,19 @@ class AudiobookApp extends StatelessWidget {
           ),
         ),
       ),
-
       initialRoute: '/stories',
-
       routes: {
-        //'/': (context) => const WelcomePage(),
-        //'/signup': (context) => const SignupPage(),
-        //'/homepage': (context) => const Homepage(),
-        //'/profile': (context) => const ProfilePage(),
         '/content-management': (context) => const ContentManagementPage(),
         '/upload-content': (context) => const UploadContentPage(),
-        //'/settings': (context) => const SettingsPage(),
         '/stories': (context) => const StoryListPage(),
       },
-
       onGenerateRoute: (settings) {
-        // Audio player route with audiobookId
         if (settings.name == '/audio-player') {
           final args = settings.arguments as Map<String, dynamic>?;
 
           return MaterialPageRoute(
             builder: (context) => AudioPlayerPage(
-              audiobookId: args?['audiobookId'] ?? 2,
+              audiobookId: args?['audiobookId'] ?? '',
             ),
           );
         }
