@@ -74,34 +74,78 @@ Some features are functional, while some modules are still in progress.
 
 ---
 
-## 📁 Project Structure
+# 📁 Complete Project Structure
 
 ```
-lib/
+autism_audiobook/
 │
-├── main.dart
+├── .dart_tool/                      
+├── .idea/                            
+├── build/                          
 │
-├── config/
-│   └── app_config.dart
+├── android/                            # Android platform-specific code
+│   ├── app/
+│   │   ├── src/
+│   │   │   ├── debug/
+│   │   │   ├── main/
+│   │   │   │   ├── java/              
+│   │   │   │   ├── res/              
+│   │   │   │   └── AndroidManifest.xml # App permissions & configuration
+│   │   │   └── profile/
+│   │   └── build.gradle.kts
+│   │
+│   ├── gradle/
+│   ├── build.gradle.kts
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── local.properties
+│   └── settings.gradle.kts
 │
-├── services/
-│   ├── api_service.dart
-│   └── database_service.dart
+├── ios/                                # iOS platform-specific code (Not important)
+│   ├── Flutter/
+│   ├── Runner/
+│   ├── Runner.xcodeproj/
+│   ├── Runner.xcworkspace/
+│   ├── RunnerTests/
+│   └── .gitignore
 │
-├── models/
-│   ├── audiobook.dart
-│   ├── content_item.dart
-│   └── content_summary.dart
+├── lib/                                # Main Flutter source code
+│   │
+│   ├── main.dart                       # Entry point of the app
+│   │
+│   ├── audio/                          # Audio logic
+│   │   └── audio_engine.dart           # Audio playback (play, pause, seek, volume, speed)
+│   │
+│   ├── config/                         # App configuration
+│   │   └── app_config.dart             # API base URL & global settings
+│   │
+│   ├── models/                         # Data models
+│   │   ├── audiobook.dart              # Audiobook model
+│   │   ├── content_item.dart           # Content list model
+│   │   └── content_summary.dart        # Summary model
+│   │
+│   ├── pages/                          # UI screens
+│   │   ├── audio_player_page.dart      # Audiobook player UI
+│   │   ├── content_management.dart     # Content management screen
+│   │   ├── story_list_page.dart        # Story library (search & filter)
+│   │   └── upload_content_page.dart    # Upload content UI
+│   │
+│   ├── services/                       # API & backend communication
+│   │   ├── api_service.dart            # API response wrapper
+│   │   └── database_service.dart       # API calls (HTTP requests)
+│   │
+│   └── test/                          
 │
-├── audio/
-│   └── audio_engine.dart
-│
-├── pages/
-│   ├── story_list_page.dart
-│   ├── audio_player_page.dart
-│   ├── content_management.dart
-│   └── upload_content_page.dart
-```
+├── .flutter-plugins-dependencies       
+├── .gitignore                        
+├── .metadata                          
+├── analysis_options.yaml               
+├── autism_audiobook.iml             
+├── pubspec.yaml                        # Dependencies & assets
+├── pubspec.lock                  
+└── README.md                           # Project documentation
+
 
 ---
 
