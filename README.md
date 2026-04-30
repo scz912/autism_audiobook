@@ -22,6 +22,13 @@ Some features are functional, while some modules are still in progress.
 
 ---
 
+## 🛠 Flutter Setup Guide (Link)
+### How to setup flutter in Android Studio
+https://www.youtube.com/watch?v=mMeQhLGD-og&t=561s
+
+
+---
+
 ## 🚀 Features Overview
 
 ### 1. Story Library
