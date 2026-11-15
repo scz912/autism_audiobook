@@ -2,168 +2,96 @@
 
 AP2 progress presentation. Soh Chang Zheng (23004994). Supervisor: Dr. Nazean Jomhari.
 
-About 1429 words, roughly 11 minutes. The same script is in each slide's speaker notes.
+About 609 words, roughly 5 minutes. The same script is in each slide's speaker notes.
 
-## Slide 1: Title  _(about 19 s)_
+## Slide 1: Title  _(about 17 s)_
 
-Good morning, Dr. Nazean and panel members. My name is Soh Chang Zheng. This is my AP2 progress presentation for Audiobook for Autism, the Visual Playlist part.
+Good morning, Dr. Nazean and panel members. I am Soh Chang Zheng, and this is my AP2 progress for Audiobook for Autism, the Visual Playlist part. My teammate, Tiew Yi Xu, works on the music part.
 
-My teammate, Tiew Yi Xu, works on the music part of the same app.
+## Slide 2: Progress at a Glance  _(about 16 s)_
 
-## Slide 2: Progress at a Glance  _(about 38 s)_
+Since AP1, I added three big parts: a community hub, AI smart tips, and book recommendations.
 
-Here is a quick summary. Since AP1, I made 20 commits and about 13,000 lines of code.
+I have written 69 automated tests. My modules are almost done. The main work left is user testing.
 
-I added three big parts. The first is the community hub, where caregivers can add friends, chat and share books. The second is AI smart tips, which suggest better settings for each child. The third is book recommendations, which pick the next book for each child.
-
-I have written 69 automated tests. My modules are almost done. The main work left is testing with real users.
-
-## Slide 3: Project Objectives: Progress  _(about 28 s)_
-
-These are my three objectives.
+## Slide 3: Project Objectives: Progress  _(about 18 s)_
 
 Objectives one and two are done. Objective three is in progress.
 
-After the panel comments, I changed one word in objective three. It said effectiveness. Effectiveness is hard to prove in our time, so now it says usability and acceptance. I will measure it with the SUS questionnaire for caregivers, and task completion for children.
+I changed effectiveness to usability and acceptance, because effectiveness is hard to prove in our time. I will measure it with SUS for caregivers and task completion for children.
 
-## Slide 4: Functional Requirements: Progress  _(about 19 s)_
+## Slide 4: Functional Requirements: Progress  _(about 5 s)_
 
-This table shows my original requirements, FR1 to FR20.
+All my original requirements, FR1 to FR20, are now built.
 
-All of them are now built. This includes PIN login, child profiles with their own settings, uploading books, the story player, and the insights page.
+## Slide 5: Non-Functional Requirements: Measurable  _(about 13 s)_
 
-Each family can only see its own data.
+Each NFR now has a number and a test. For example, playback must start in under 2 seconds. The speed targets will be timed in the next sprint.
 
-## Slide 5: Non-Functional Requirements: Measurable  _(about 28 s)_
+## Slide 6: New Requirements: Community Hub (M13)  _(about 11 s)_
 
-Panel 1 said my NFRs must be measurable. So now each NFR has a number and a test.
+Both panels said my scope was too small, so I added the community hub. Caregivers can invite families, add friends, chat, and share books.
 
-For example, a child screen has at most five buttons. Buttons are at least 48 by 48 dp. Playback must start in under 2 seconds.
+## Slide 7: New Requirements: Accounts and Guide (M14, M15)  _(about 11 s)_
 
-Some are done. The speed targets will be timed on an Android phone in the next sprint.
+I also added two account types, six starter books for every new account, and Paige's first-time tour. The green boxes are my modules.
 
-## Slide 6: New Requirements: Community Hub (M13)  _(about 32 s)_
+## Slide 8: New Requirements: AI Adaptive Settings (M16)  _(about 19 s)_
 
-Both panels said my scope was too small. They suggested inviting friends and sharing between caregivers. So I added the community hub.
+Panel 1 said most of the AI was done by my teammate. So I built two AI parts of my own. The first is M16, smart tips. It suggests better settings for each child, and nothing changes until the caregiver says yes.
 
-Caregivers can join and invite other families with a code. They can add friends, chat, and send a book in a message. They can share books to a feed, and save their own copy of a shared book.
+## Slide 9: New Requirements: Book Recommendations (M17)  _(about 10 s)_
 
-Each requirement has a simple test on the right.
+The second is M17, book recommendations. It picks the next book for each child, and every pick shows a short reason.
 
-## Slide 7: New Requirements: Accounts and Guide (M14, M15)  _(about 33 s)_
+## Slide 10: Methodology in Practice: Two-Week Sprints  _(about 13 s)_
 
-I also added three more features.
+I use Agile with two-week sprints. Sprints 1 and 2 are done, Sprint 3 is in progress, and Sprints 4 and 5 are for user testing and the report.
 
-First, two account types: one for caregivers, and one for teenagers who use the app by themselves. Second, every new account gets six starter books. Third, Paige, our mascot, gives a short tour the first time you sign in.
+## Slide 11: How My AI Part Works: Smart Tips  _(about 24 s)_
 
-At the bottom are all the new modules. The green ones are mine, including M16 and M17, my two AI parts, on the next two slides.
+Smart tips work in three steps. First, rules look at how the child reads, like going back or pausing. Second, the app learns which tips helped before. Third, Gemini picks the best three and words them simply.
 
-## Slide 8: New Requirements: AI Adaptive Settings (M16)  _(about 46 s)_
+Gemini cannot add tips or change values, and the app still works without it.
 
-Panel 1 said most of the AI was done by my teammate. The Gemini story making is Yi Xu's part. So I built two AI parts of my own. The first is M16, AI adaptive settings. In the app we call it smart tips.
+## Slide 12: How the Book Recommender Works  _(about 22 s)_
 
-First, the player saves how each book went, like going back a page, pausing, or the child making the words bigger. Then rules find tips, the app learns which tips really help, and Gemini picks the best three.
+The recommender only uses our own listening data. A finished book counts as liked. Then it finds similar books, and books that children with the same taste liked. It also uses today's mood and the right level.
 
-Two safety rules: Gemini cannot add tips or change values, and nothing changes until the caregiver says yes.
+The final list is varied, and each pick says why.
 
-## Slide 9: New Requirements: Book Recommendations (M17)  _(about 38 s)_
+## Slide 13: Community Hub: How Sharing Stays Safe  _(about 10 s)_
 
-My second AI part is M17, book recommendations. It picks the next book for each child.
+Sharing is safe. New books are private, only members can see shared books, and I can only change my own books.
 
-Each book gets a rating from how the child read it. Finished means liked, stopped early means not liked. Then the app suggests books like the ones the child liked, and books that other children with the same taste liked. A new child with no history gets popular books that fit their mood.
+## Slide 14: System Modules: Original and New  _(about 10 s)_
 
-Every pick shows a short reason, so the caregiver knows why it was chosen.
+All seven original modules are built, plus ten new ones. The ones marked Mine are my work, including my two AI parts.
 
-## Slide 10: Methodology in Practice: Two-Week Sprints  _(about 24 s)_
+## Slide 15: System Development: Community Hub  _(about 10 s)_
 
-Panel 1 asked about my sprint length. I use Agile with two-week sprints.
+Here are screens from the app with test accounts: the hub feed, the Friends tab, and a chat with a shared book.
 
-Sprints 1 and 2 are done. Sprint 3 is in progress now, and it includes the smart tips and book recommendations. Sprint 4 is for testing with users, and Sprint 5 is for fixes, the report and the demo.
+## Slide 16: System Development: AI and Guide  _(about 12 s)_
 
-## Slide 11: How My AI Part Works: Smart Tips  _(about 65 s)_
+Figure 8 shows book picks, each with a reason. Figure 9 shows smart tips that the caregiver can apply or skip. Figure 10 is Paige's tour.
 
-Panel 2 asked how the AI works, so here are the steps. It is a hybrid of three parts.
+## Slide 17: Testing and Evaluation: Activities  _(about 10 s)_
 
-Step one, rules. They look at the last 30 days, and recent days count more. For example, lots of going back and pausing means: read a little slower.
+I have 52 backend tests and 17 frontend tests, and they all pass. Next is speed checks and testing with users.
 
-Step two, learning. The app remembers which kinds of tips helped before, and ranks those higher. It still tries new tips sometimes. This method is called Thompson sampling.
+## Slide 18: Evaluation Plan: Usability and Acceptance  _(about 11 s)_
 
-Step three, Gemini. It picks the best three tips and writes the reason in simple words. If Gemini is not available, the app still shows the tips.
+My targets are a SUS score of 68 or more, 80 percent of tasks finished by children, and playback starting in under 2 seconds.
 
-The bottom row shows how it learns. If the caregiver applies a tip, trust goes up. If they skip it, trust goes down. After three more sessions, the app checks if listening got better, and learns from that too.
+## Slide 19: Addressing AP1 Feedback: Panel 1  _(about 14 s)_
 
-## Slide 12: How the Book Recommender Works  _(about 56 s)_
+For Dr. Chiam's comments, I added the community hub and two AI parts, made the NFRs measurable, and explained the sprints. Testing with children and copyright are still in progress.
 
-This is how the book recommender works. It is a hybrid recommender, and it only uses our own listening data. No outside AI service is needed.
+## Slide 20: Addressing AP1 Feedback: Panel 2  _(about 14 s)_
 
-The top row scores each book. Ratings come from finished or stopped books. Content-based filtering finds books with similar topics, tags, level and music, using TF-IDF. Collaborative filtering finds what children with the same taste liked. Context adds today's mood, the right level and age. For a new child, popular books count more. As the child reads more, their own taste counts more.
+For Dr. Nasuha's comments, I changed the objective wording, added the hub, labelled all figures, and explained the AI on slides 11 and 12. The diagrams are still being updated.
 
-The bottom row makes the final list. Books just finished wait their turn. The top picks are kept varied, using a method called MMR. And each pick says why it was chosen.
+## Slide 21: Next Steps for AP2  _(about 13 s)_
 
-## Slide 13: Community Hub: How Sharing Stays Safe  _(about 29 s)_
-
-Sharing must be safe, so three rules decide who can see, play and change a book.
-
-New books are always private. I can play books that friends share with me, but only after I join the community. And I can only change my own books. If I like a shared book, I save my own copy.
-
-These rules are covered by 15 tests.
-
-## Slide 14: System Modules: Original and New  _(about 27 s)_
-
-All seven original modules are built. We also added ten new modules.
-
-The ones marked Mine are my work: the community hub, accounts, the Paige tours, and my two AI parts, smart tips and book recommendations. Yi Xu built the music modules and the Gemini story making.
-
-So my part now covers sharing, community and two AI features.
-
-## Slide 15: System Development: Community Hub  _(about 29 s)_
-
-Here are some screens from the app, using test accounts.
-
-Figure 5 is the hub feed, where a parent shares a story. Figure 6 is the Friends tab, with friend requests at the top. Figure 7 is a chat, where a friend sends a book and I can save it to my library.
-
-Nothing is shared unless the caregiver chooses to share it.
-
-## Slide 16: System Development: AI and Guide  _(about 36 s)_
-
-Figure 8 shows book recommendations for one child. Each pick has a reason. For example, the first one says: readers of A tree with emotion liked it.
-
-Figure 9 shows smart tips. The first tip says: you often make the words bigger, so make the text size bigger. The small badge shows how often this kind of tip helped before. The caregiver can apply, edit or skip it.
-
-Figure 10 is Paige's tour, showing the Community tab.
-
-## Slide 17: Testing and Evaluation: Activities  _(about 23 s)_
-
-For testing, I have written 52 backend tests and 17 frontend tests. 21 of the backend tests are for smart tips and 10 are for book recommendations, and they all pass.
-
-Next, I will time the app's speed, test it with caregivers using SUS, and run short sessions with children.
-
-## Slide 18: Evaluation Plan: Usability and Acceptance  _(about 18 s)_
-
-These are my targets.
-
-For caregivers, a SUS score of 68 or more. For children, at least 80 percent of tasks finished. For the system, start in under 2 seconds.
-
-Participants will come from Dr. Nazean's network, with caregiver consent.
-
-## Slide 19: Addressing AP1 Feedback: Panel 1  _(about 32 s)_
-
-This is how I answered Dr. Chiam's comments.
-
-To add complexity, I added the community hub and two AI parts of my own: smart tips and book recommendations. My NFRs now have numbers. Objective three now says usability and acceptance. Sprints are explained on slide 10.
-
-Two items are not done yet. Testing with children is planned. Copyright is in progress, and I am listing all sources in the report.
-
-## Slide 20: Addressing AP1 Feedback: Panel 2  _(about 23 s)_
-
-And this is how I answered Dr. Nasuha's comments.
-
-I changed effectiveness to usability and acceptance. I added the community hub. All figures and tables now have labels. And slides 11 and 12 explain my AI step by step.
-
-The diagrams are still being updated to match the new requirements.
-
-## Slide 21: Next Steps for AP2  _(about 16 s)_
-
-To finish, the app is almost done. Next, I will time the app, test it with caregivers and children, update the diagrams, and write the report.
-
-Thank you. I am happy to take your questions.
+Next, I will time the app, test it with caregivers and children, update the diagrams, and write the report. Thank you. I am happy to take your questions.
