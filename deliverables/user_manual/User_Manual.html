@@ -15,6 +15,7 @@
   --sky: #dde9f8;
   --mint: #dcf1e3;
   --lavender: #ebe3fa;
+  --rose: #fbe1ea;
   --num-bg: #26215c;
   --num-fg: #ffc83d;
   --shadow: 0 6px 20px rgba(38, 33, 92, 0.12);
@@ -24,14 +25,14 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #14152a; --surface: #1d1f3b; --ink: #eceafb; --muted: #a9abca; --line: #2f3258;
-    --butter: #3a3322; --sky: #1e2d46; --mint: #1d3a2b; --lavender: #2e2649;
+    --butter: #3a3322; --sky: #1e2d46; --mint: #1d3a2b; --lavender: #2e2649; --rose: #45253a;
     --num-bg: #ffc83d; --num-fg: #26215c; --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #14152a; --surface: #1d1f3b; --ink: #eceafb; --muted: #a9abca; --line: #2f3258;
-  --butter: #3a3322; --sky: #1e2d46; --mint: #1d3a2b; --lavender: #2e2649;
+  --butter: #3a3322; --sky: #1e2d46; --mint: #1d3a2b; --lavender: #2e2649; --rose: #45253a;
   --num-bg: #ffc83d; --num-fg: #26215c; --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   color-scheme: dark;
 }
@@ -93,6 +94,7 @@ h2.small .zh, h3 .zh, h4 .zh, h2 .zh { font-size: 0.72em; font-weight: 500; }
 .toc-sky { background: var(--sky); }
 .toc-mint { background: var(--mint); }
 .toc-lavender { background: var(--lavender); }
+.toc-rose { background: var(--rose); }
 
 /* Parts and screens */
 .part { display: flex; flex-direction: column; gap: 34px; scroll-margin-top: 16px; }
@@ -101,6 +103,7 @@ h2.small .zh, h3 .zh, h4 .zh, h2 .zh { font-size: 0.72em; font-weight: 500; }
 .tone-sky .part-head { background: var(--sky); }
 .tone-mint .part-head { background: var(--mint); }
 .tone-lavender .part-head { background: var(--lavender); }
+.tone-rose .part-head { background: var(--rose); }
 .part-head h2 { font-size: 1.8rem; font-weight: 800; }
 .lead { max-width: 70ch; }
 .lead .en { font-weight: 600; }
@@ -147,6 +150,7 @@ h2.small .zh, h3 .zh, h4 .zh, h2 .zh { font-size: 0.72em; font-weight: 500; }
   .phones-2 .phone { width: 46mm; }
   .phones-3 .phone { width: 40mm; }
   .phone img, .paige { box-shadow: none; }
+  .phone img.tall { max-height: 250mm; width: auto; max-width: 100%; }
   .screen-body { gap: 16px; }
 }
 </style></head><body>
@@ -154,192 +158,353 @@ h2.small .zh, h3 .zh, h4 .zh, h2 .zh { font-size: 0.72em; font-weight: 500; }
 <header class="cover">
   <img class="paige" src="img/paige.png" alt="" width="120" height="120">
   <div>
-    <p class="eyebrow"><span class="en">User manual</span><span class="zh" lang="zh-Hans">用户手册</span></p>
+    <p class="eyebrow"><span class="en">User guide</span><span class="zh" lang="zh-Hans">用户手册</span></p>
     <h1><span class="en">Audiobook for Autism</span><span class="zh" lang="zh-Hans">自闭症儿童有声书</span></h1>
-    <p class="intro"><span class="en">This app plays calm, gentle audiobooks for autistic children.</span><span class="zh" lang="zh-Hans">这个应用为自闭症儿童播放平静、温和的有声书。</span></p><p class="intro"><span class="en">A parent or caregiver sets everything up. The child listens in a safe Child Mode.</span><span class="zh" lang="zh-Hans">由家长或照顾者设置一切，孩子在安全的儿童模式中收听。</span></p><p class="intro"><span class="en">Teenagers can also use the app on their own with an independent account.</span><span class="zh" lang="zh-Hans">青少年也可以用独立账户自己使用这个应用。</span></p>
+    <p class="intro"><span class="en">This app plays calm, gentle audiobooks. It is made for autistic teenagers and children.</span><span class="zh" lang="zh-Hans">这个应用播放平静、温和的有声书，专为自闭症青少年和儿童设计。</span></p><p class="intro"><span class="en">Most users are teenagers who use the app on their own, with a personal account. This guide starts with that.</span><span class="zh" lang="zh-Hans">大多数用户是自己使用应用的青少年，使用个人账户。本指南先介绍个人账户。</span></p><p class="intro"><span class="en">A parent or caregiver can also make a parent account, with a safe Child Mode for younger children.</span><span class="zh" lang="zh-Hans">家长或照顾者也可以创建家长账户，为年幼的孩子提供安全的儿童模式。</span></p>
   </div>
 </header>
 
 <section class="block">
   <h2 class="small"><span class="en">Who uses the app</span><span class="zh" lang="zh-Hans">谁会使用这个应用</span></h2>
-  <div class="users"><div class="user"><h4><span class="en">Caregiver</span><span class="zh" lang="zh-Hans">照顾者</span></h4><p class="ln"><span class="en">Adds children, books and settings, and checks progress.</span><span class="zh" lang="zh-Hans">添加孩子、书本和设置，并查看进度。</span></p></div><div class="user"><h4><span class="en">Child</span><span class="zh" lang="zh-Hans">孩子</span></h4><p class="ln"><span class="en">Picks a mood and listens to stories in Child Mode.</span><span class="zh" lang="zh-Hans">在儿童模式中选择心情并听故事。</span></p></div><div class="user"><h4><span class="en">Independent user</span><span class="zh" lang="zh-Hans">独立用户</span></h4><p class="ln"><span class="en">A teenager who uses everything in one account.</span><span class="zh" lang="zh-Hans">在一个账户里使用所有功能的青少年。</span></p></div></div>
+  <div class="users"><div class="user"><h4><span class="en">Personal account</span><span class="zh" lang="zh-Hans">个人账户</span></h4><p class="ln"><span class="en">For a teenager who uses the app alone. Everything is in one account.</span><span class="zh" lang="zh-Hans">给自己使用应用的青少年。所有功能都在一个账户里。</span></p></div><div class="user"><h4><span class="en">Caregiver account</span><span class="zh" lang="zh-Hans">照顾者账户</span></h4><p class="ln"><span class="en">For a parent who sets up books and settings for a child.</span><span class="zh" lang="zh-Hans">给为孩子设置书本和设置的家长。</span></p></div><div class="user"><h4><span class="en">Child Mode</span><span class="zh" lang="zh-Hans">儿童模式</span></h4><p class="ln"><span class="en">A simple, safe space a caregiver opens for a young child.</span><span class="zh" lang="zh-Hans">照顾者为年幼孩子打开的简单、安全的空间。</span></p></div></div>
 </section>
 
 <section class="block" id="flow">
   <h2 class="small"><span class="en">How it works</span><span class="zh" lang="zh-Hans">使用流程</span></h2>
   <div class="flows">
-    <div class="flow"><h4><span class="en">Set up once</span><span class="zh" lang="zh-Hans">首次设置</span></h4><ol><li><span class="step">1</span><div><p class="ln"><span class="en">Open the app and meet Paige, your story buddy.</span><span class="zh" lang="zh-Hans">打开应用，认识你的故事伙伴 Paige。</span></p></div></li><li><span class="step">2</span><div><p class="ln"><span class="en">Pick a language and who is using the app.</span><span class="zh" lang="zh-Hans">选择语言和使用者。</span></p></div></li><li><span class="step">3</span><div><p class="ln"><span class="en">Create an account with a 4-digit PIN.</span><span class="zh" lang="zh-Hans">用4位数PIN码创建账户。</span></p></div></li><li><span class="step">4</span><div><p class="ln"><span class="en">Add your child in Profiles.</span><span class="zh" lang="zh-Hans">在 Profiles（资料）页面添加孩子。</span></p></div></li><li><span class="step">5</span><div><p class="ln"><span class="en">Set the voice, reading speed and text size in Settings.</span><span class="zh" lang="zh-Hans">在 Settings（设置）页面调整声音、语速和字体大小。</span></p></div></li><li><span class="step">6</span><div><p class="ln"><span class="en">Add books in Content: write your own or make one with AI.</span><span class="zh" lang="zh-Hans">在 Content（内容）页面添加书本：自己写或用AI生成。</span></p></div></li></ol></div>
-    <div class="flow"><h4><span class="en">Every day</span><span class="zh" lang="zh-Hans">日常使用</span></h4><ol><li><span class="step">7</span><div><p class="ln"><span class="en">Tap Enter on your child&#x27;s profile and type your PIN to start Child Mode.</span><span class="zh" lang="zh-Hans">在孩子的资料上点击 Enter（进入），输入PIN码开始儿童模式。</span></p></div></li><li><span class="step">8</span><div><p class="ln"><span class="en">Your child picks a mood and listens to a story.</span><span class="zh" lang="zh-Hans">孩子选择心情并听故事。</span></p></div></li><li><span class="step">9</span><div><p class="ln"><span class="en">Exit Child Mode with your PIN.</span><span class="zh" lang="zh-Hans">用PIN码退出儿童模式。</span></p></div></li><li><span class="step">10</span><div><p class="ln"><span class="en">Check Insights for progress, smart tips and book picks.</span><span class="zh" lang="zh-Hans">在 Insights（报告）页面查看进度、智能建议和推荐书本。</span></p></div></li><li><span class="step">11</span><div><p class="ln"><span class="en">Optional: share books and chat with other families in Community.</span><span class="zh" lang="zh-Hans">可选：在 Community（社区）与其他家庭分享书本和聊天。</span></p></div></li></ol></div>
+    <div class="flow"><h4><span class="en">Set up once</span><span class="zh" lang="zh-Hans">首次设置</span></h4><ol><li><span class="step">1</span><div><p class="ln"><span class="en">Turn off Google Play Protect, then download and install the app.</span><span class="zh" lang="zh-Hans">关闭 Google Play 保护机制，然后下载并安装应用。</span></p></div></li><li><span class="step">2</span><div><p class="ln"><span class="en">Open the app, meet Paige and pick a language.</span><span class="zh" lang="zh-Hans">打开应用，认识 Paige 并选择语言。</span></p></div></li><li><span class="step">3</span><div><p class="ln"><span class="en">Choose &quot;I use it on my own&quot; and make your account.</span><span class="zh" lang="zh-Hans">选择 I use it on my own（我自己使用）并创建账户。</span></p></div></li><li><span class="step">4</span><div><p class="ln"><span class="en">Follow Paige&#x27;s short tour.</span><span class="zh" lang="zh-Hans">跟着 Paige 完成简短导览。</span></p></div></li><li><span class="step">5</span><div><p class="ln"><span class="en">Optional: allow YouTube access to see your top music genre.</span><span class="zh" lang="zh-Hans">可选：允许 YouTube 访问，查看你最喜欢的音乐类型。</span></p></div></li></ol></div>
+    <div class="flow"><h4><span class="en">Every day</span><span class="zh" lang="zh-Hans">日常使用</span></h4><ol><li><span class="step">6</span><div><p class="ln"><span class="en">Pick how you feel today on Home.</span><span class="zh" lang="zh-Hans">在主页选择你今天的心情。</span></p></div></li><li><span class="step">7</span><div><p class="ln"><span class="en">Play Today&#x27;s pick, or choose a story in Stories.</span><span class="zh" lang="zh-Hans">播放今日推荐，或在故事页选择一个故事。</span></p></div></li><li><span class="step">8</span><div><p class="ln"><span class="en">Make your own book in Create.</span><span class="zh" lang="zh-Hans">在创作页制作你自己的书。</span></p></div></li><li><span class="step">9</span><div><p class="ln"><span class="en">Check Progress for smart tips and books picked for you.</span><span class="zh" lang="zh-Hans">在进度页查看智能建议和为你推荐的书。</span></p></div></li><li><span class="step">10</span><div><p class="ln"><span class="en">Share books and chat with friends in Community.</span><span class="zh" lang="zh-Hans">在社区与朋友分享书本和聊天。</span></p></div></li></ol></div>
   </div>
 </section>
 
-<nav class="toc" aria-label="Contents"><a href="#getting-started" class="toc-butter"><span class="en">Getting started</span><span class="zh" lang="zh-Hans">开始使用</span></a><a href="#caregiver" class="toc-sky"><span class="en">Caregiver mode</span><span class="zh" lang="zh-Hans">照顾者模式</span></a><a href="#child-mode" class="toc-mint"><span class="en">Child Mode</span><span class="zh" lang="zh-Hans">儿童模式</span></a><a href="#independent" class="toc-lavender"><span class="en">Independent account</span><span class="zh" lang="zh-Hans">独立账户</span></a></nav>
+<nav class="toc" aria-label="Contents"><a href="#install" class="toc-butter"><span class="en">Before you install</span><span class="zh" lang="zh-Hans">安装之前</span></a><a href="#personal" class="toc-lavender"><span class="en">Personal account</span><span class="zh" lang="zh-Hans">个人账户</span></a><a href="#music" class="toc-rose"><span class="en">Turn on Top Music Genre</span><span class="zh" lang="zh-Hans">开启热门音乐类型</span></a><a href="#caregiver" class="toc-sky"><span class="en">Caregiver account</span><span class="zh" lang="zh-Hans">照顾者账户</span></a><a href="#child-mode" class="toc-mint"><span class="en">Child Mode</span><span class="zh" lang="zh-Hans">儿童模式</span></a></nav>
 
 
-<section class="part tone-butter" id="getting-started">
+<section class="part tone-butter" id="install">
   <header class="part-head">
-    <h2><span class="en">Getting started</span><span class="zh" lang="zh-Hans">开始使用</span></h2>
-    <p class="lead"><span class="en">These pages show the first time you open the app.</span><span class="zh" lang="zh-Hans">以下是第一次打开应用时看到的页面。</span></p>
+    <h2><span class="en">Before you install</span><span class="zh" lang="zh-Hans">安装之前</span></h2>
+    <p class="lead"><span class="en">The app is installed from a file (APK), not from the Play Store. Google Play Protect may block it, so turn Play Protect off first.</span><span class="zh" lang="zh-Hans">本应用通过文件（APK）安装，而不是从 Play 商店。Google Play 保护机制可能会阻止安装，所以请先关闭它。</span></p>
+  </header>
+  
+<section class="screen">
+  <h3><span class="en">Step 1: Open Play Protect</span><span class="zh" lang="zh-Hans">第1步：打开 Play 保护机制</span></h3>
+  <div class="screen-body phones-2">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/a1_playstore.jpg" alt="Step 1: Open Play Protect screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/a2_protect.jpg" alt="Step 1: Open Play Protect screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Open the Play Store app and tap your profile picture at the top right.</span><span class="zh" lang="zh-Hans">打开 Play 商店，点击右上角的头像。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap Play Protect.</span><span class="zh" lang="zh-Hans">点击 Play Protect（Play 保护机制）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Tap the settings (gear) icon at the top right.</span><span class="zh" lang="zh-Hans">点击右上角的设置（齿轮）图标。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Step 2: Turn off app scanning</span><span class="zh" lang="zh-Hans">第2步：关闭应用扫描</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/a3_settings.jpg" alt="Step 2: Turn off app scanning screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Turn off &quot;Scan apps with Play Protect&quot;.</span><span class="zh" lang="zh-Hans">关闭 Scan apps with Play Protect（使用 Play 保护机制扫描应用）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap Turn off.</span><span class="zh" lang="zh-Hans">点击 Turn off（关闭）。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Step 3: Download and install</span><span class="zh" lang="zh-Hans">第3步：下载并安装</span></h3>
+  <div class="screen-body phones-3">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/b1_unknown.jpg" alt="Step 3: Download and install screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/b2_allow_source.jpg" alt="Step 3: Download and install screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/b3_install.jpg" alt="Step 3: Download and install screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Download the APK file from the link we give you, then open it. If your phone asks, tap Settings.</span><span class="zh" lang="zh-Hans">从我们提供的链接下载 APK 文件并打开。如果手机询问，点击 Settings（设置）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Turn on &quot;Allow from this source&quot;, then go back.</span><span class="zh" lang="zh-Hans">开启 Allow from this source（允许来自此来源），然后返回。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Tap Install. When it finishes, tap Open.</span><span class="zh" lang="zh-Hans">点击 Install（安装），完成后点击 Open（打开）。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">After the app is installed, you can turn Play Protect back on in the same place.</span><span class="zh" lang="zh-Hans">安装完成后，你可以在同一个地方重新开启 Play 保护机制。</span></p></div></div>
+  </div>
+</section>
+</section>
+<section class="part tone-lavender" id="personal">
+  <header class="part-head">
+    <h2><span class="en">Personal account</span><span class="zh" lang="zh-Hans">个人账户</span></h2>
+    <p class="lead"><span class="en">For teenagers who use the app on their own. The bar at the bottom has 7 tabs: Home, Stories, Create, Progress, Community, Piano and Settings.</span><span class="zh" lang="zh-Hans">给自己使用应用的青少年。底部有7个标签：Home（主页）、Stories（故事）、Create（创作）、Progress（进度）、Community（社区）、Piano（钢琴）和 Settings（设置）。</span></p>
   </header>
   
 <section class="screen">
   <h3><span class="en">Welcome</span><span class="zh" lang="zh-Hans">欢迎页</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g01_welcome.jpg" alt="Welcome screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/g01_welcome.jpg" alt="Welcome screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Paige, the app&#x27;s mascot, says hello.</span><span class="zh" lang="zh-Hans">应用的吉祥物 Paige 向你问好。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Skip: go straight to sign-up.</span><span class="zh" lang="zh-Hans">Skip（跳过）：直接进入注册。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Next: go to the next page.</span><span class="zh" lang="zh-Hans">Next（下一步）：进入下一页。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Pick a language</span><span class="zh" lang="zh-Hans">选择语言</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g02_language.jpg" alt="Pick a language screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/g02_language.jpg" alt="Pick a language screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">English.</span><span class="zh" lang="zh-Hans">英文。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Bahasa Malaysia. You can change the language later in Settings.</span><span class="zh" lang="zh-Hans">马来文。之后可以在设置中更改语言。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">What the app offers</span><span class="zh" lang="zh-Hans">应用功能</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g03_intro.jpg" alt="What the app offers screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/g03_intro.jpg" alt="What the app offers screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Stories, Music and Friends are the three main parts of the app.</span><span class="zh" lang="zh-Hans">故事、音乐和朋友是应用的三个主要部分。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Who is using the app?</span><span class="zh" lang="zh-Hans">谁在使用这个应用？</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g05_who.jpg" alt="Who is using the app? screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">A parent helps me: a parent account with Child Mode. Choose this for young children.</span><span class="zh" lang="zh-Hans">A parent helps me（家长协助）：带儿童模式的家长账户，适合年幼的孩子。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">I use it on my own: one account with everything, for teenagers.</span><span class="zh" lang="zh-Hans">I use it on my own（我自己使用）：一个账户包含所有功能，适合青少年。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Sign in: if you already have an account.</span><span class="zh" lang="zh-Hans">Sign in（登录）：如果你已经有账户。</span></p></div></li></ol></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p01_who.jpg" alt="Who is using the app? screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Tap &quot;I use it on my own&quot;. This makes a personal account.</span><span class="zh" lang="zh-Hans">点击 I use it on my own（我自己使用），创建个人账户。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">&quot;A parent helps me&quot; is for parents (see the Caregiver account part).</span><span class="zh" lang="zh-Hans">A parent helps me（家长协助）是给家长用的（见照顾者账户部分）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Already have an account? Sign in.</span><span class="zh" lang="zh-Hans">已有账户？登录。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
-  <h3><span class="en">Make a parent account</span><span class="zh" lang="zh-Hans">创建家长账户</span></h3>
+  <h3><span class="en">Make your account</span><span class="zh" lang="zh-Hans">创建你的账户</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g06_signup.jpg" alt="Make a parent account screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your name.</span><span class="zh" lang="zh-Hans">你的名字。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Email (optional).</span><span class="zh" lang="zh-Hans">电子邮件（可选）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">A 4-digit PIN. Remember it: you also need it to leave Child Mode.</span><span class="zh" lang="zh-Hans">4位数PIN码。请记住它：退出儿童模式时也需要用到。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Create account.</span><span class="zh" lang="zh-Hans">创建账户。</span></p></div></li></ol></div>
-  </div>
-</section>
-<section class="screen">
-  <h3><span class="en">Sign in</span><span class="zh" lang="zh-Hans">登录</span></h3>
-  <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g07_signin.jpg" alt="Sign in screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your email.</span><span class="zh" lang="zh-Hans">你的电子邮件。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Your 4-digit PIN.</span><span class="zh" lang="zh-Hans">你的4位数PIN码。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Sign in.</span><span class="zh" lang="zh-Hans">登录。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">New here? Create an account.</span><span class="zh" lang="zh-Hans">新用户？创建账户。</span></p></div></li></ol></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p02_signup.jpg" alt="Make your account screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your name.</span><span class="zh" lang="zh-Hans">你的名字。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Email (optional). It helps you sign in on a new phone.</span><span class="zh" lang="zh-Hans">电子邮件（可选），方便在新手机上登录。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Make a 4-digit PIN. You use it to sign in.</span><span class="zh" lang="zh-Hans">设定4位数PIN码，用来登录。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Pick your age.</span><span class="zh" lang="zh-Hans">选择你的年龄。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Create account.</span><span class="zh" lang="zh-Hans">创建账户。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Paige&#x27;s tour</span><span class="zh" lang="zh-Hans">Paige 导览</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/g08_tour.jpg" alt="Paige&#x27;s tour screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The first time you sign in, Paige shows you each part of the app.</span><span class="zh" lang="zh-Hans">第一次登录时，Paige 会带你认识应用的每个部分。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap the arrow for the next tip.</span><span class="zh" lang="zh-Hans">点击箭头查看下一个提示。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Skip ends the tour. You can watch it again later from Paige.</span><span class="zh" lang="zh-Hans">Skip（跳过）结束导览，之后可以从 Paige 重新观看。</span></p></div></li></ol></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p03_tour.jpg" alt="Paige&#x27;s tour screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Paige shows you each part of the app the first time.</span><span class="zh" lang="zh-Hans">第一次使用时，Paige 会带你认识应用的每个部分。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap the arrow for the next tip.</span><span class="zh" lang="zh-Hans">点击箭头查看下一个提示。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Skip ends the tour. Tap Paige on Home to see it again.</span><span class="zh" lang="zh-Hans">Skip（跳过）结束导览。在主页点击 Paige 可以再看一次。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Home</span><span class="zh" lang="zh-Hans">主页</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p04_home.jpg" alt="Home screen" width="640" height="2122"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">How are you feeling today? Tap a mood.</span><span class="zh" lang="zh-Hans">你今天感觉怎么样？点选一个心情。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Today&#x27;s pick: a book chosen for you and your mood.</span><span class="zh" lang="zh-Hans">Today&#x27;s pick（今日推荐）：根据你和你的心情挑选的书。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Tap play to start listening.</span><span class="zh" lang="zh-Hans">点击播放开始收听。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Top 3 Books: the books you listen to most.</span><span class="zh" lang="zh-Hans">Top 3 Books（前三名书本）：你最常听的书。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Paige: tap to see the tour again.</span><span class="zh" lang="zh-Hans">Paige：点击可再次观看导览。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">The 7 tabs at the bottom.</span><span class="zh" lang="zh-Hans">底部的7个标签。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Stories</span><span class="zh" lang="zh-Hans">故事</span></h3>
+  <div class="screen-body phones-2">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p05_stories.jpg" alt="Stories screen" width="640" height="1924"></figure><figure class="phone"><img class="shot" src="img/p07_interactive_tab.jpg" alt="Stories screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Three shelves: stories, interactive books and Al-Quran.</span><span class="zh" lang="zh-Hans">三个书架：故事、互动书和古兰经。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap a book cover to open it.</span><span class="zh" lang="zh-Hans">点击书本封面打开。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Create: make a new book.</span><span class="zh" lang="zh-Hans">Create（创作）：制作新书。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Interactive books are on the puzzle shelf.</span><span class="zh" lang="zh-Hans">互动书在拼图书架上。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Tap a book to play it.</span><span class="zh" lang="zh-Hans">点击书本播放。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Al-Quran chapters are downloaded to your phone and play without internet.</span><span class="zh" lang="zh-Hans">古兰经章节下载到手机后，无需网络即可播放。</span></p></div></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Story player</span><span class="zh" lang="zh-Hans">故事播放器</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p06_player.jpg" alt="Story player screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The page picture and words. Words light up as they are read.</span><span class="zh" lang="zh-Hans">页面图片和文字。朗读时文字会亮起。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Back, play or pause, and next page.</span><span class="zh" lang="zh-Hans">上一页、播放或暂停、下一页。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Voice: female or male.</span><span class="zh" lang="zh-Hans">声音：女声或男声。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Speed: slow (turtle) or fast (rabbit).</span><span class="zh" lang="zh-Hans">速度：慢（乌龟）或快（兔子）。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Text size: small or big.</span><span class="zh" lang="zh-Hans">字体：小或大。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Interactive book</span><span class="zh" lang="zh-Hans">互动书</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p08_question.jpg" alt="Interactive book screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The story asks you a question.</span><span class="zh" lang="zh-Hans">故事问你一个问题。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap an answer. The story carries on with your choice.</span><span class="zh" lang="zh-Hans">点击答案，故事会按你的选择继续。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Create</span><span class="zh" lang="zh-Hans">创作</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p09_create.jpg" alt="Create screen" width="640" height="2781"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Upload: make a new book.</span><span class="zh" lang="zh-Hans">Upload（上传）：制作新书。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">How many books you have.</span><span class="zh" lang="zh-Hans">你拥有的书本数量。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Book types: Linear, Interactive and Al-Quran.</span><span class="zh" lang="zh-Hans">书本类型：普通、互动和古兰经。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Search, or tap the filter button.</span><span class="zh" lang="zh-Hans">搜索，或点击筛选按钮。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Your books. Tap one to view it, or ⋮ to edit, share or delete.</span><span class="zh" lang="zh-Hans">你的书本。点击查看，或点 ⋮ 编辑、分享或删除。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Books you make are private. Nobody else sees them until you share them.</span><span class="zh" lang="zh-Hans">你制作的书是私密的。在你分享之前，别人看不到。</span></p></div></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Make a book with AI</span><span class="zh" lang="zh-Hans">用AI制作书本</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p10_upload_ai.jpg" alt="Make a book with AI screen" width="640" height="2389"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Linear (a normal story) or Interactive (with questions).</span><span class="zh" lang="zh-Hans">Linear（普通故事）或 Interactive（有问题的互动书）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Write it yourself, or Make with AI.</span><span class="zh" lang="zh-Hans">自己写，或 Make with AI（用AI生成）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Type an idea, for example &quot;A shy turtle&quot;.</span><span class="zh" lang="zh-Hans">输入一个想法，例如&quot;一只害羞的乌龟&quot;。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Choose the difficulty and how many pages.</span><span class="zh" lang="zh-Hans">选择难度和页数。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Choose the story language.</span><span class="zh" lang="zh-Hans">选择故事语言。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Optional: paste your own text for the AI to use.</span><span class="zh" lang="zh-Hans">可选：贴上你自己的文字让AI使用。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">The AI can also draw a cover picture.</span><span class="zh" lang="zh-Hans">AI 也可以画封面图片。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Background music: the AI picks a track, or you choose one.</span><span class="zh" lang="zh-Hans">背景音乐：AI 会挑选曲目，或由你选择。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Make with AI. You can check and edit the story after.</span><span class="zh" lang="zh-Hans">Make with AI（用AI生成）。之后可以检查和编辑故事。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Progress</span><span class="zh" lang="zh-Hans">进度</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p11_progress.jpg" alt="Progress screen" width="640" height="4992"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Smart tips: suggestions for better settings. Tap to open.</span><span class="zh" lang="zh-Hans">Smart tips（智能建议）：更合适设置的建议。点击展开。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Recommended for you: books picked for you, each with a reason.</span><span class="zh" lang="zh-Hans">Recommended for you（为你推荐）：为你挑选的书，每本都附有原因。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Your listening numbers: time, sessions, books finished, mood and streak.</span><span class="zh" lang="zh-Hans">你的收听数据：时间、次数、完成的书、心情和连续天数。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">This week: minutes each day.</span><span class="zh" lang="zh-Hans">本周：每天的收听分钟。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Mood breakdown.</span><span class="zh" lang="zh-Hans">心情分布。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Top stories.</span><span class="zh" lang="zh-Hans">热门故事。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Top Music Genre: turn this on in the next steps.</span><span class="zh" lang="zh-Hans">Top Music Genre（热门音乐类型）：按照接下来的步骤开启。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Top Audiobooks for Your Music.</span><span class="zh" lang="zh-Hans">适合你音乐口味的有声书。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Recent activity.</span><span class="zh" lang="zh-Hans">最近活动。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Smart tips</span><span class="zh" lang="zh-Hans">智能建议</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p12_smarttips.jpg" alt="Smart tips screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The setting the tip is about.</span><span class="zh" lang="zh-Hans">建议涉及的设置。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Now and the new value.</span><span class="zh" lang="zh-Hans">现在的数值和新的数值。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Why the app suggests it.</span><span class="zh" lang="zh-Hans">应用提出建议的原因。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Apply, Edit or Skip. Nothing changes until you choose.</span><span class="zh" lang="zh-Hans">Apply（应用）、Edit（编辑）或 Skip（跳过）。在你选择之前不会改变。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">How often this kind of tip helped before.</span><span class="zh" lang="zh-Hans">这类建议以前帮助过几次。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Community: join</span><span class="zh" lang="zh-Hans">社区：加入</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p13_join.jpg" alt="Community: join screen" width="640" height="1151"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Join the community. It is private and invite-only.</span><span class="zh" lang="zh-Hans">加入社区。社区是私密的，只能凭邀请加入。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Or type an invite code from a friend.</span><span class="zh" lang="zh-Hans">或输入朋友给你的邀请码。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Community: Hub, Chat and Friends</span><span class="zh" lang="zh-Hans">社区：动态、聊天与朋友</span></h3>
+  <div class="screen-body phones-3">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p13_hub.jpg" alt="Community: Hub, Chat and Friends screen" width="640" height="2496"></figure><figure class="phone"><img class="shot" src="img/p15_chat.jpg" alt="Community: Hub, Chat and Friends screen" width="640" height="1376"></figure><figure class="phone"><img class="shot tall" src="img/p16_friends.jpg" alt="Community: Hub, Chat and Friends screen" width="640" height="1871"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Hub, Chat and Friends.</span><span class="zh" lang="zh-Hans">动态、聊天和朋友。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Posts from friends. Tap Listen to play a shared book.</span><span class="zh" lang="zh-Hans">朋友的帖子。点击 Listen（收听）播放分享的书。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Like, react or comment.</span><span class="zh" lang="zh-Hans">点赞、回应或评论。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Share a book or a tip.</span><span class="zh" lang="zh-Hans">分享一本书或一个心得。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Invite a friend with a code.</span><span class="zh" lang="zh-Hans">用邀请码邀请朋友。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Chat messages.</span><span class="zh" lang="zh-Hans">聊天消息。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Save a book a friend sent to your own library.</span><span class="zh" lang="zh-Hans">把朋友发来的书保存到你的书库。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Type a message, or send one of your books.</span><span class="zh" lang="zh-Hans">输入消息，或发送你的书。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Find people by name or email.</span><span class="zh" lang="zh-Hans">按名字或电子邮件找人。</span></p></div></li><li><span class="num">10</span><div><p class="ln"><span class="en">Friend requests: tick to accept, cross to decline.</span><span class="zh" lang="zh-Hans">好友请求：勾号接受，叉号拒绝。</span></p></div></li><li><span class="num">11</span><div><p class="ln"><span class="en">Your friends.</span><span class="zh" lang="zh-Hans">你的朋友。</span></p></div></li><li><span class="num">12</span><div><p class="ln"><span class="en">Add friends.</span><span class="zh" lang="zh-Hans">添加朋友。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Piano</span><span class="zh" lang="zh-Hans">钢琴</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p17_piano.jpg" alt="Piano screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Tap the coloured keys to play.</span><span class="zh" lang="zh-Hans">点击彩色琴键弹奏。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Record a melody.</span><span class="zh" lang="zh-Hans">录制旋律。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Your recordings. Use one as background music for a book.</span><span class="zh" lang="zh-Hans">你的录音。可以用作书本的背景音乐。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Settings</span><span class="zh" lang="zh-Hans">设置</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/p18_settings.jpg" alt="Settings screen" width="640" height="2936"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Narrator voice.</span><span class="zh" lang="zh-Hans">朗读声音。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Reading speed.</span><span class="zh" lang="zh-Hans">朗读速度。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Auto-play next page and Read Along.</span><span class="zh" lang="zh-Hans">自动翻页和跟读。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Text size.</span><span class="zh" lang="zh-Hans">字体大小。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Language.</span><span class="zh" lang="zh-Hans">语言。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Favourite and blocked contacts.</span><span class="zh" lang="zh-Hans">收藏和屏蔽的联系人。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Change your PIN.</span><span class="zh" lang="zh-Hans">更改PIN码。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Log out.</span><span class="zh" lang="zh-Hans">登出。</span></p></div></li></ol></div>
+  </div>
+</section>
+</section>
+<section class="part tone-rose" id="music">
+  <header class="part-head">
+    <h2><span class="en">Turn on Top Music Genre</span><span class="zh" lang="zh-Hans">开启热门音乐类型</span></h2>
+    <p class="lead"><span class="en">Optional, Android only. With your permission, the app sees which songs you play in YouTube and YouTube Music, learns your favourite music genre, and picks audiobooks with music you like.</span><span class="zh" lang="zh-Hans">可选，仅限安卓手机。经你允许后，应用会看到你在 YouTube 和 YouTube Music 播放的歌曲，了解你最喜欢的音乐类型，并推荐配有你喜欢的音乐的有声书。</span></p>
+  </header>
+  
+<section class="screen">
+  <h3><span class="en">Step 1: Allow YouTube Access</span><span class="zh" lang="zh-Hans">第1步：允许 YouTube 访问</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/p11_progress_music.jpg" alt="Step 1: Allow YouTube Access screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Go to Progress and scroll to Top Music Genre. Tap Allow YouTube Access.</span><span class="zh" lang="zh-Hans">进入 Progress（进度），滚动到 Top Music Genre，点击 Allow YouTube Access（允许 YouTube 访问）。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Step 2: Read and open settings</span><span class="zh" lang="zh-Hans">第2步：阅读并打开设置</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/m02_dialog.jpg" alt="Step 2: Read and open settings screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The app explains what it sees: only the song name and artist. Song names are deleted after the genre is found.</span><span class="zh" lang="zh-Hans">应用说明它能看到的内容：只有歌名和歌手。找到音乐类型后歌名会被删除。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap Open settings.</span><span class="zh" lang="zh-Hans">点击 Open settings（打开设置）。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Step 3: Turn on notification access</span><span class="zh" lang="zh-Hans">第3步：开启通知使用权</span></h3>
+  <div class="screen-body phones-2">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c1_notif_access.jpg" alt="Step 3: Turn on notification access screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c3_allow.jpg" alt="Step 3: Turn on notification access screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Turn on &quot;Allow notification access&quot; for Audiobook for Autism.</span><span class="zh" lang="zh-Hans">为 Audiobook for Autism 开启 Allow notification access（允许通知使用权）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap Allow.</span><span class="zh" lang="zh-Hans">点击 Allow（允许）。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">This is the permission the app needs to see what is playing in YouTube.</span><span class="zh" lang="zh-Hans">应用需要这个权限才能看到 YouTube 正在播放的内容。</span></p></div></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">If the switch is greyed out</span><span class="zh" lang="zh-Hans">如果开关是灰色的</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c2_restricted.jpg" alt="If the switch is greyed out screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Android may lock it (&quot;Restricted setting&quot;) because the app was installed from a file. Open App info and tap ⋮ at the top right.</span><span class="zh" lang="zh-Hans">因为应用是从文件安装的，安卓可能会锁住它（Restricted setting，受限设置）。打开 App info（应用信息），点右上角的 ⋮。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap &quot;Allow restricted settings&quot;, then go back to Step 3.</span><span class="zh" lang="zh-Hans">点击 Allow restricted settings（允许受限设置），然后回到第3步。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Step 4: Let it run in the background</span><span class="zh" lang="zh-Hans">第4步：允许在后台运行</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c4_battery.jpg" alt="Step 4: Let it run in the background screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Tap Allow so the app keeps counting your music when it is closed.</span><span class="zh" lang="zh-Hans">点击 Allow（允许），让应用关闭时也能继续统计你的音乐。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
+  <h3><span class="en">Done: your top genre</span><span class="zh" lang="zh-Hans">完成：你的热门音乐类型</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot tall" src="img/m04_on.jpg" alt="Done: your top genre screen" width="640" height="1536"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your top genre from the last 30 days.</span><span class="zh" lang="zh-Hans">过去30天你最喜欢的音乐类型。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Your top 3 genres and how many plays.</span><span class="zh" lang="zh-Hans">你的前三名音乐类型和播放次数。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Change YouTube access: turn it off at any time.</span><span class="zh" lang="zh-Hans">Change YouTube access（更改 YouTube 访问）：随时可以关闭。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Audiobooks whose music suits your taste.</span><span class="zh" lang="zh-Hans">背景音乐适合你口味的有声书。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Only genre counts are kept. The app never keeps your song list. iPhones do not allow this feature.</span><span class="zh" lang="zh-Hans">只保存音乐类型的次数，应用不会保存你的歌曲列表。iPhone 不支持此功能。</span></p></div></div>
   </div>
 </section>
 </section>
 <section class="part tone-sky" id="caregiver">
   <header class="part-head">
-    <h2><span class="en">Caregiver mode</span><span class="zh" lang="zh-Hans">照顾者模式</span></h2>
-    <p class="lead"><span class="en">The bar at the bottom has 7 tabs: Dashboard, Profiles, Content, Insights, Community, Piano and Settings.</span><span class="zh" lang="zh-Hans">底部有7个标签：Dashboard（仪表板）、Profiles（资料）、Content（内容）、Insights（报告）、Community（社区）、Piano（钢琴）和 Settings（设置）。</span></p>
+    <h2><span class="en">Caregiver account</span><span class="zh" lang="zh-Hans">照顾者账户</span></h2>
+    <p class="lead"><span class="en">For parents of younger children. Choose &quot;A parent helps me&quot; when you sign up. The bar at the bottom has 7 tabs: Dashboard, Profiles, Content, Insights, Community, Piano and Settings.</span><span class="zh" lang="zh-Hans">给年幼孩子的家长。注册时选择 A parent helps me（家长协助）。底部有7个标签：Dashboard（仪表板）、Profiles（资料）、Content（内容）、Insights（报告）、Community（社区）、Piano（钢琴）和 Settings（设置）。</span></p>
   </header>
   
 <section class="screen">
+  <h3><span class="en">Make a parent account</span><span class="zh" lang="zh-Hans">创建家长账户</span></h3>
+  <div class="screen-body phones-1">
+    <div class="phones"><figure class="phone"><img class="shot" src="img/g06_signup.jpg" alt="Make a parent account screen" width="640" height="1376"></figure></div>
+    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your name.</span><span class="zh" lang="zh-Hans">你的名字。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Email (optional).</span><span class="zh" lang="zh-Hans">电子邮件（可选）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">A 4-digit PIN. Remember it: you also need it to leave Child Mode.</span><span class="zh" lang="zh-Hans">4位数PIN码。请记住它：退出儿童模式时也需要用到。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Create account.</span><span class="zh" lang="zh-Hans">创建账户。</span></p></div></li></ol></div>
+  </div>
+</section>
+<section class="screen">
   <h3><span class="en">Dashboard</span><span class="zh" lang="zh-Hans">仪表板</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c01_dashboard.jpg" alt="Dashboard screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c01_dashboard.jpg" alt="Dashboard screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Total listening minutes, average engagement and number of children.</span><span class="zh" lang="zh-Hans">总收听分钟、平均参与度和孩子人数。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Top 3 Books: the most-listened books. Tap the play icon to preview one.</span><span class="zh" lang="zh-Hans">Top 3 Books（前三名书本）：收听最多的书。点击播放图标可以预览。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Log out.</span><span class="zh" lang="zh-Hans">登出。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">The tab bar. Tap a tab to change page.</span><span class="zh" lang="zh-Hans">标签栏。点击标签切换页面。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Child profiles</span><span class="zh" lang="zh-Hans">孩子资料</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c02_profiles.jpg" alt="Child profiles screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c02b_addchild.jpg" alt="Child profiles screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c02_profiles.jpg" alt="Child profiles screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c02b_addchild.jpg" alt="Child profiles screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Add Child.</span><span class="zh" lang="zh-Hans">Add Child（添加孩子）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Each child&#x27;s card shows name, age, favourite topic and minutes listened.</span><span class="zh" lang="zh-Hans">每个孩子的卡片显示名字、年龄、喜欢的主题和收听分钟。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Enter: start Child Mode for this child.</span><span class="zh" lang="zh-Hans">Enter（进入）：为这个孩子开始儿童模式。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Edit or remove the profile.</span><span class="zh" lang="zh-Hans">编辑或删除资料。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Type the child&#x27;s name and age.</span><span class="zh" lang="zh-Hans">输入孩子的名字和年龄。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Pick an avatar.</span><span class="zh" lang="zh-Hans">选择头像。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Save.</span><span class="zh" lang="zh-Hans">保存。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Content library</span><span class="zh" lang="zh-Hans">内容管理</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c03_content.jpg" alt="Content library screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c03b_filters.jpg" alt="Content library screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c03_content.jpg" alt="Content library screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c03b_filters.jpg" alt="Content library screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Upload: add a new book.</span><span class="zh" lang="zh-Hans">Upload（上传）：添加新书。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">How many books you have: total, audio, text and made with AI.</span><span class="zh" lang="zh-Hans">你的书本数量：总数、音频、文字和AI生成。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Book types: Linear (a normal story), Interactive (with questions) and Al-Quran.</span><span class="zh" lang="zh-Hans">书本类型：Linear（普通故事）、Interactive（有问题的互动书）和 Al-Quran（古兰经）。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Search by title, or tap the filter button.</span><span class="zh" lang="zh-Hans">按标题搜索，或点击筛选按钮。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Your books. Tap a book to view it, or tap ⋮ for more options.</span><span class="zh" lang="zh-Hans">你的书本。点击查看，或点击 ⋮ 获取更多选项。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Filter by type (audio, text, AI) and by language.</span><span class="zh" lang="zh-Hans">按类型（音频、文字、AI）和语言筛选。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">New books are private. Only you can see them until you share them.</span><span class="zh" lang="zh-Hans">新书是私密的。在你分享之前，只有你能看到。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Book preview</span><span class="zh" lang="zh-Hans">书本预览</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c03c_bookview.jpg" alt="Book preview screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c03c_bookview.jpg" alt="Book preview screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The page picture and text.</span><span class="zh" lang="zh-Hans">页面图片和文字。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Back, play and next page.</span><span class="zh" lang="zh-Hans">上一页、播放和下一页。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Preview: listen the way your child will.</span><span class="zh" lang="zh-Hans">Preview（预览）：以孩子的方式收听。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Pick the narrator voice.</span><span class="zh" lang="zh-Hans">选择朗读声音。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Upload: write your own book</span><span class="zh" lang="zh-Hans">上传：自己写书</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c04_upload_write.jpg" alt="Upload: write your own book screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c04_upload_write.jpg" alt="Upload: write your own book screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Choose a Linear or Interactive book.</span><span class="zh" lang="zh-Hans">选择 Linear（普通）或 Interactive（互动）书本。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Write it yourself, or Make with AI.</span><span class="zh" lang="zh-Hans">自己写，或 Make with AI（用AI生成）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Title, topic, difficulty and tags.</span><span class="zh" lang="zh-Hans">标题、主题、难度和标签。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Add a cover picture.</span><span class="zh" lang="zh-Hans">添加封面图片。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Upload: make a book with AI</span><span class="zh" lang="zh-Hans">上传：用AI生成书本</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c04d_upload_ai.jpg" alt="Upload: make a book with AI screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c04d_upload_ai.jpg" alt="Upload: make a book with AI screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Make with AI is selected.</span><span class="zh" lang="zh-Hans">已选择 Make with AI（用AI生成）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Type an idea, for example &quot;A shy turtle&quot;.</span><span class="zh" lang="zh-Hans">输入一个想法，例如&quot;一只害羞的乌龟&quot;。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Choose the difficulty and how many pages.</span><span class="zh" lang="zh-Hans">选择难度和页数。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Choose the story language. The AI also draws a picture for each page.</span><span class="zh" lang="zh-Hans">选择故事语言。AI 也会为每页画一张图。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">You can check and edit an AI story before your child sees it.</span><span class="zh" lang="zh-Hans">在孩子看到之前，你可以检查和编辑AI生成的故事。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Upload: interactive book</span><span class="zh" lang="zh-Hans">上传：互动书本</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c04e_upload_interactive.jpg" alt="Upload: interactive book screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c04e_upload_interactive.jpg" alt="Upload: interactive book screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Interactive: the story stops and asks the child a question.</span><span class="zh" lang="zh-Hans">Interactive（互动）：故事会停下来问孩子一个问题。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">The child taps an answer and the story carries on.</span><span class="zh" lang="zh-Hans">孩子点击答案，故事继续。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Upload: pages and background music</span><span class="zh" lang="zh-Hans">上传：页面与背景音乐</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c04f_music_toggle.jpg" alt="Upload: pages and background music screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c04h_track_list.jpg" alt="Upload: pages and background music screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c04f_music_toggle.jpg" alt="Upload: pages and background music screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c04h_track_list.jpg" alt="Upload: pages and background music screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Type the text for each page and add a picture.</span><span class="zh" lang="zh-Hans">为每页输入文字并添加图片。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Add page.</span><span class="zh" lang="zh-Hans">Add page（添加页面）。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Turn on background music.</span><span class="zh" lang="zh-Hans">开启背景音乐。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Choose a track.</span><span class="zh" lang="zh-Hans">Choose a track（选择曲目）。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Set the music volume.</span><span class="zh" lang="zh-Hans">设置音乐音量。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Save Storybook.</span><span class="zh" lang="zh-Hans">Save Storybook（保存故事书）。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Search music by title or composer.</span><span class="zh" lang="zh-Hans">按标题或作曲者搜索音乐。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Filter by mood, such as Calm or Gentle.</span><span class="zh" lang="zh-Hans">按情绪筛选，例如 Calm（平静）或 Gentle（温和）。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Tap play to listen first, then tick a track.</span><span class="zh" lang="zh-Hans">点击播放先试听，再勾选曲目。</span></p></div></li><li><span class="num">10</span><div><p class="ln"><span class="en">Upload your own music.</span><span class="zh" lang="zh-Hans">上传你自己的音乐。</span></p></div></li><li><span class="num">11</span><div><p class="ln"><span class="en">Choose a track to confirm.</span><span class="zh" lang="zh-Hans">点击 Choose a track 确认。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Insights</span><span class="zh" lang="zh-Hans">报告</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c05_insights.jpg" alt="Insights screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c05_insights.jpg" alt="Insights screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">See all children, or pick one child.</span><span class="zh" lang="zh-Hans">查看所有孩子，或选择一个孩子。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Listening time, sessions, stories finished, mood, average session and streak.</span><span class="zh" lang="zh-Hans">收听时间、次数、完成的故事、心情、平均时长和连续天数。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Scroll down for a weekly chart, moods, top stories and recent activity.</span><span class="zh" lang="zh-Hans">向下滚动可以看到每周图表、心情、热门故事和最近活动。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Insights: smart tips and book picks</span><span class="zh" lang="zh-Hans">报告：智能建议与推荐书本</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c05b_recs.jpg" alt="Insights: smart tips and book picks screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c05c_smarttips.jpg" alt="Insights: smart tips and book picks screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c05b_recs.jpg" alt="Insights: smart tips and book picks screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c05c_smarttips.jpg" alt="Insights: smart tips and book picks screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Pick one child to see their tips and picks.</span><span class="zh" lang="zh-Hans">选择一个孩子，查看他的建议和推荐。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Smart tips: AI suggestions for better settings. Tap to open.</span><span class="zh" lang="zh-Hans">Smart tips（智能建议）：AI 建议更合适的设置。点击展开。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Recommended for you: books picked for this child, each with a short reason.</span><span class="zh" lang="zh-Hans">Recommended for you（为你推荐）：为这个孩子挑选的书，每本都附有简短原因。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Each tip shows the setting now and the new value.</span><span class="zh" lang="zh-Hans">每条建议显示现在的设置和新的数值。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Apply, Edit or Skip. Nothing changes until you choose.</span><span class="zh" lang="zh-Hans">Apply（应用）、Edit（编辑）或 Skip（跳过）。在你选择之前不会有任何改变。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">How many times this kind of tip helped before.</span><span class="zh" lang="zh-Hans">这类建议以前帮助过几次。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Community: Hub</span><span class="zh" lang="zh-Hans">社区：动态</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c06_hub.jpg" alt="Community: Hub screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c06b_share.jpg" alt="Community: Hub screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c06_hub.jpg" alt="Community: Hub screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c06b_share.jpg" alt="Community: Hub screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Hub, Chat and Friends.</span><span class="zh" lang="zh-Hans">Hub（动态）、Chat（聊天）和 Friends（朋友）。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Posts from families in the community.</span><span class="zh" lang="zh-Hans">社区里其他家庭的帖子。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Listen to a shared book.</span><span class="zh" lang="zh-Hans">收听分享的书本。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Like, react or comment.</span><span class="zh" lang="zh-Hans">点赞、回应或评论。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Share a book or a tip.</span><span class="zh" lang="zh-Hans">分享一本书或一个心得。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Invite another family.</span><span class="zh" lang="zh-Hans">邀请其他家庭。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Write a message.</span><span class="zh" lang="zh-Hans">写一段话。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Add one of your books (optional).</span><span class="zh" lang="zh-Hans">添加一本你的书（可选）。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Share.</span><span class="zh" lang="zh-Hans">Share（分享）。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Only members can see the hub. Nothing is shared unless you choose to share it.</span><span class="zh" lang="zh-Hans">只有成员能看到动态。除非你选择分享，否则不会分享任何内容。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Community: Chat</span><span class="zh" lang="zh-Hans">社区：聊天</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c07_chatlist.jpg" alt="Community: Chat screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c07b_chatthread.jpg" alt="Community: Chat screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c07_chatlist.jpg" alt="Community: Chat screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c07b_chatthread.jpg" alt="Community: Chat screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Your chats. Starred friends stay on top.</span><span class="zh" lang="zh-Hans">你的聊天。加星标的朋友会置顶。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">The red number shows unread messages.</span><span class="zh" lang="zh-Hans">红色数字表示未读消息。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">New group: chat with several families.</span><span class="zh" lang="zh-Hans">New group（新群组）：与多个家庭一起聊天。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Messages.</span><span class="zh" lang="zh-Hans">消息。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">A book sent in a chat. Tap &quot;Save to my library&quot; to keep your own copy.</span><span class="zh" lang="zh-Hans">聊天中发送的书。点击 Save to my library 保存你自己的副本。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Send one of your books.</span><span class="zh" lang="zh-Hans">发送你的书。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Type a message.</span><span class="zh" lang="zh-Hans">输入消息。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Community: Friends</span><span class="zh" lang="zh-Hans">社区：朋友</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/c08_friends.jpg" alt="Community: Friends screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c08b_invite.jpg" alt="Community: Friends screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c08_friends.jpg" alt="Community: Friends screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c08b_invite.jpg" alt="Community: Friends screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Find families by name or email.</span><span class="zh" lang="zh-Hans">按名字或电子邮件寻找家庭。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Friend requests: tap the tick to accept or the cross to decline.</span><span class="zh" lang="zh-Hans">好友请求：点击勾号接受，点击叉号拒绝。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Your friends.</span><span class="zh" lang="zh-Hans">你的朋友。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Create a new invite code.</span><span class="zh" lang="zh-Hans">Create a new code（创建新的邀请码）。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Your codes. Give a code to another family so they can join.</span><span class="zh" lang="zh-Hans">你的邀请码。把邀请码给其他家庭，他们就能加入。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Piano</span><span class="zh" lang="zh-Hans">钢琴</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/c09_piano.jpg" alt="Piano screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c09_piano.jpg" alt="Piano screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Tap the coloured keys (Do, Re, Mi...) to play notes.</span><span class="zh" lang="zh-Hans">点击彩色琴键（Do、Re、Mi……）弹奏音符。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Record a melody.</span><span class="zh" lang="zh-Hans">录制旋律。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Your recordings. A recording can be used as background music.</span><span class="zh" lang="zh-Hans">你的录音。录音可以用作背景音乐。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">The piano turns sideways so the keys fit the screen.</span><span class="zh" lang="zh-Hans">钢琴会横向显示，让琴键适合屏幕。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Settings</span><span class="zh" lang="zh-Hans">设置</span></h3>
   <div class="screen-body phones-3">
-    <div class="phones"><figure class="phone"><img src="img/c10_settings.jpg" alt="Settings screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c10b_settings_more.jpg" alt="Settings screen" width="640" height="1376"></figure><figure class="phone"><img src="img/c10c_settings_pin.jpg" alt="Settings screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/c10_settings.jpg" alt="Settings screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c10b_settings_more.jpg" alt="Settings screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/c10c_settings_pin.jpg" alt="Settings screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Choose which child to set up. Each child has their own settings.</span><span class="zh" lang="zh-Hans">选择要设置的孩子。每个孩子都有自己的设置。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Narrator voice: female or male.</span><span class="zh" lang="zh-Hans">朗读声音：女声或男声。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Reading speed.</span><span class="zh" lang="zh-Hans">朗读速度。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Auto-Play Next Page: turn pages by themselves.</span><span class="zh" lang="zh-Hans">Auto-Play Next Page（自动翻页）：自动翻到下一页。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Read Along: light up each word as it is read.</span><span class="zh" lang="zh-Hans">Read Along（跟读）：朗读时每个字会亮起。</span></p></div></li><li><span class="num">6</span><div><p class="ln"><span class="en">Text size.</span><span class="zh" lang="zh-Hans">字体大小。</span></p></div></li><li><span class="num">7</span><div><p class="ln"><span class="en">Language for the app and AI stories.</span><span class="zh" lang="zh-Hans">应用和AI故事的语言。</span></p></div></li><li><span class="num">8</span><div><p class="ln"><span class="en">Contacts: people you starred or blocked.</span><span class="zh" lang="zh-Hans">联系人：你加星标或屏蔽的人。</span></p></div></li><li><span class="num">9</span><div><p class="ln"><span class="en">Change your PIN.</span><span class="zh" lang="zh-Hans">更改PIN码。</span></p></div></li></ol></div>
   </div>
 </section>
@@ -353,78 +518,50 @@ h2.small .zh, h3 .zh, h4 .zh, h2 .zh { font-size: 0.72em; font-weight: 500; }
 <section class="screen">
   <h3><span class="en">Start Child Mode</span><span class="zh" lang="zh-Hans">开始儿童模式</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/k00_pin.jpg" alt="Start Child Mode screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k00_pin.jpg" alt="Start Child Mode screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Type your 4-digit PIN.</span><span class="zh" lang="zh-Hans">输入你的4位数PIN码。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Start Child Mode.</span><span class="zh" lang="zh-Hans">Start Child Mode（开始儿童模式）。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Child home</span><span class="zh" lang="zh-Hans">孩子主页</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/k01_child_home.jpg" alt="Child home screen" width="640" height="1376"></figure><figure class="phone"><img src="img/k02_mood_picked.jpg" alt="Child home screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k01_child_home.jpg" alt="Child home screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/k02_mood_picked.jpg" alt="Child home screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">How are you feeling today? The child taps a mood.</span><span class="zh" lang="zh-Hans">你今天感觉怎么样？孩子点选一个心情。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Today&#x27;s pick: a book chosen for the child.</span><span class="zh" lang="zh-Hans">Today&#x27;s pick（今日推荐）：为孩子挑选的书。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Tap play to start.</span><span class="zh" lang="zh-Hans">点击播放开始。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Home, Stories, Piano and Exit.</span><span class="zh" lang="zh-Hans">主页、故事、钢琴和退出。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">After the child picks a mood, Today&#x27;s pick changes to suit it.</span><span class="zh" lang="zh-Hans">孩子选择心情后，今日推荐会随之改变。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Story library</span><span class="zh" lang="zh-Hans">故事书库</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/k03_stories.jpg" alt="Story library screen" width="640" height="1376"></figure><figure class="phone"><img src="img/k03c_interactive.jpg" alt="Story library screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k03_stories.jpg" alt="Story library screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/k03c_interactive.jpg" alt="Story library screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Three tabs: stories, interactive books and Al-Quran.</span><span class="zh" lang="zh-Hans">三个标签：故事、互动书和古兰经。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap a book to open it.</span><span class="zh" lang="zh-Hans">点击书本打开。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Interactive books are under the puzzle tab.</span><span class="zh" lang="zh-Hans">互动书在拼图标签里。</span></p></div></li></ol><div class="note"><p class="ln"><span class="en">Al-Quran chapters are downloaded to the phone and play without internet.</span><span class="zh" lang="zh-Hans">古兰经章节下载到手机后，无需网络即可播放。</span></p></div></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Storybook player</span><span class="zh" lang="zh-Hans">故事播放器</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/k04_player.jpg" alt="Storybook player screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k04_player.jpg" alt="Storybook player screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The page picture and words. Words light up as they are read.</span><span class="zh" lang="zh-Hans">页面图片和文字。朗读时文字会亮起。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Back, play or pause, and next page.</span><span class="zh" lang="zh-Hans">上一页、播放或暂停、下一页。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Voice: female or male.</span><span class="zh" lang="zh-Hans">声音：女声或男声。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Speed: slow (turtle) or fast (rabbit).</span><span class="zh" lang="zh-Hans">速度：慢（乌龟）或快（兔子）。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Text size: small or big.</span><span class="zh" lang="zh-Hans">字体：小或大。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Interactive question</span><span class="zh" lang="zh-Hans">互动问题</span></h3>
   <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/k04c_question.jpg" alt="Interactive question screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k04c_question.jpg" alt="Interactive question screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">The story asks a question.</span><span class="zh" lang="zh-Hans">故事提出一个问题。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Tap an answer to keep reading.</span><span class="zh" lang="zh-Hans">点击答案继续阅读。</span></p></div></li></ol></div>
   </div>
 </section>
 <section class="screen">
   <h3><span class="en">Piano and leaving Child Mode</span><span class="zh" lang="zh-Hans">钢琴与退出儿童模式</span></h3>
   <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/k05_child_piano.jpg" alt="Piano and leaving Child Mode screen" width="640" height="1376"></figure><figure class="phone"><img src="img/k06_exit_pin.jpg" alt="Piano and leaving Child Mode screen" width="640" height="1376"></figure></div>
+    <div class="phones"><figure class="phone"><img class="shot" src="img/k05_child_piano.jpg" alt="Piano and leaving Child Mode screen" width="640" height="1376"></figure><figure class="phone"><img class="shot" src="img/k06_exit_pin.jpg" alt="Piano and leaving Child Mode screen" width="640" height="1376"></figure></div>
     <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Play the coloured keys.</span><span class="zh" lang="zh-Hans">弹奏彩色琴键。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Record a song.</span><span class="zh" lang="zh-Hans">录制歌曲。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">To leave, the caregiver types the PIN.</span><span class="zh" lang="zh-Hans">要离开时，照顾者输入PIN码。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Exit Child Mode.</span><span class="zh" lang="zh-Hans">Exit Child Mode（退出儿童模式）。</span></p></div></li></ol></div>
-  </div>
-</section>
-</section>
-<section class="part tone-lavender" id="independent">
-  <header class="part-head">
-    <h2><span class="en">Independent account</span><span class="zh" lang="zh-Hans">独立账户</span></h2>
-    <p class="lead"><span class="en">Choose &quot;I use it on my own&quot; when you sign up. Everything is in one account, with no Child Mode.</span><span class="zh" lang="zh-Hans">注册时选择 I use it on my own（我自己使用）。所有功能都在一个账户里，没有儿童模式。</span></p>
-  </header>
-  
-<section class="screen">
-  <h3><span class="en">Home</span><span class="zh" lang="zh-Hans">主页</span></h3>
-  <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/i01_home.jpg" alt="Home screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Pick a mood.</span><span class="zh" lang="zh-Hans">选择心情。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Today&#x27;s pick.</span><span class="zh" lang="zh-Hans">今日推荐。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Tabs: Home, Stories, Create, Progress, Community, Piano and Settings.</span><span class="zh" lang="zh-Hans">标签：主页、故事、创作、进度、社区、钢琴和设置。</span></p></div></li></ol></div>
-  </div>
-</section>
-<section class="screen">
-  <h3><span class="en">Create</span><span class="zh" lang="zh-Hans">创作</span></h3>
-  <div class="screen-body phones-1">
-    <div class="phones"><figure class="phone"><img src="img/i03_create.jpg" alt="Create screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Upload a book, or make one with AI.</span><span class="zh" lang="zh-Hans">上传书本，或用AI生成。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Your books.</span><span class="zh" lang="zh-Hans">你的书本。</span></p></div></li></ol></div>
-  </div>
-</section>
-<section class="screen">
-  <h3><span class="en">Progress</span><span class="zh" lang="zh-Hans">进度</span></h3>
-  <div class="screen-body phones-2">
-    <div class="phones"><figure class="phone"><img src="img/i04_progress.jpg" alt="Progress screen" width="640" height="1376"></figure><figure class="phone"><img src="img/i04b_music.jpg" alt="Progress screen" width="640" height="1376"></figure></div>
-    <div class="desc"><ol><li><span class="num">1</span><div><p class="ln"><span class="en">Smart tips.</span><span class="zh" lang="zh-Hans">智能建议。</span></p></div></li><li><span class="num">2</span><div><p class="ln"><span class="en">Recommended for you.</span><span class="zh" lang="zh-Hans">为你推荐。</span></p></div></li><li><span class="num">3</span><div><p class="ln"><span class="en">Your listening numbers.</span><span class="zh" lang="zh-Hans">你的收听数据。</span></p></div></li><li><span class="num">4</span><div><p class="ln"><span class="en">Top stories.</span><span class="zh" lang="zh-Hans">热门故事。</span></p></div></li><li><span class="num">5</span><div><p class="ln"><span class="en">Top Music Genre: with your permission, the app learns what music you like on YouTube. This works on Android phones only.</span><span class="zh" lang="zh-Hans">Top Music Genre（热门音乐类型）：经你允许后，应用会从 YouTube 了解你喜欢的音乐。仅适用于安卓手机。</span></p></div></li></ol></div>
   </div>
 </section>
 </section>
 
 <section class="block tips" id="tips">
   <h2 class="small"><span class="en">Good to know</span><span class="zh" lang="zh-Hans">温馨提示</span></h2>
-  <ul><li><p class="ln"><span class="en">Keep your PIN private. Your child needs you to leave Child Mode.</span><span class="zh" lang="zh-Hans">请保管好你的PIN码。孩子需要你才能离开儿童模式。</span></p></li><li><p class="ln"><span class="en">Books you make are private until you share them.</span><span class="zh" lang="zh-Hans">你制作的书在分享之前都是私密的。</span></p></li><li><p class="ln"><span class="en">Smart tips never change a setting by themselves.</span><span class="zh" lang="zh-Hans">智能建议不会自行更改任何设置。</span></p></li><li><p class="ln"><span class="en">The AI gets listening numbers only, never your child&#x27;s name.</span><span class="zh" lang="zh-Hans">AI 只会收到收听数据，绝不会收到孩子的名字。</span></p></li><li><p class="ln"><span class="en">The screens in this manual use sample accounts and books.</span><span class="zh" lang="zh-Hans">本手册中的画面使用示例账户和书本。</span></p></li></ul>
+  <ul><li><p class="ln"><span class="en">Keep your PIN private.</span><span class="zh" lang="zh-Hans">请保管好你的PIN码。</span></p></li><li><p class="ln"><span class="en">Books you make are private until you share them.</span><span class="zh" lang="zh-Hans">你制作的书在分享之前都是私密的。</span></p></li><li><p class="ln"><span class="en">Smart tips never change a setting by themselves.</span><span class="zh" lang="zh-Hans">智能建议不会自行更改任何设置。</span></p></li><li><p class="ln"><span class="en">The AI gets listening numbers only, never your name.</span><span class="zh" lang="zh-Hans">AI 只会收到收听数据，绝不会收到你的名字。</span></p></li><li><p class="ln"><span class="en">Pictures marked ILLUSTRATION show Android screens. Your phone may look a little different.</span><span class="zh" lang="zh-Hans">标有 ILLUSTRATION（示意图）的图片是安卓画面，你的手机可能略有不同。</span></p></li><li><p class="ln"><span class="en">The app screens in this manual use sample accounts and books.</span><span class="zh" lang="zh-Hans">本手册中的应用画面使用示例账户和书本。</span></p></li></ul>
 </section>
 </div>
 </body></html>
